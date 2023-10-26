@@ -1,6 +1,7 @@
 const arrayPakaiSampaiHabis = []
 
 arrayPakaiSampaiHabis.push({
+  id: 'a599d79f1',
   nama: "novel",
   deskripsi: "#AngkutBarang",
   gambar: "img/pakaiSampaiHabis/novel.png",
@@ -8,6 +9,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'ed638227',
   nama: "Baju Bayi",
   deskripsi: "#PakaiSampaiHabis",
   gambar: "img/pakaiSampaiHabis/baby-clothes.png",
@@ -15,6 +17,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'b6fb1b79',
   nama: "Buku",
   deskripsi: "#SalingSilang",
   gambar: "img/pakaiSampaiHabis/buku.png",
@@ -22,6 +25,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'a93b76274',
   nama: "Robot",
   deskripsi: "#SalingSilang",
   gambar: "img/pakaiSampaiHabis/robot.png",
@@ -29,6 +33,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'a889b59db',
   nama: "Kaos",
   deskripsi: "#PakaiSampaiHabis",
   gambar: "img/pakaiSampaiHabis/shirt-men.png",
@@ -36,6 +41,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'e8980a2a',
   nama: "Lampu Belajar",
   deskripsi: "#AngkutBarang",
   gambar: "img/pakaiSampaiHabis/lampu-belajar.png",
@@ -43,6 +49,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'a52d64734',
   nama: "Lampu Vintage",
   deskripsi: "#AngkutBarang",
   gambar: "img/pakaiSampaiHabis/vintage-lamp.png",
@@ -50,6 +57,7 @@ arrayPakaiSampaiHabis.push({
 })
 
 arrayPakaiSampaiHabis.push({
+  id: 'a99d7c54b',
   nama: "Mainan Anak",
   deskripsi: "#AngkutBarang",
   gambar: "img/pakaiSampaiHabis/mainan.png",
@@ -67,6 +75,7 @@ function tampilkanBarang() {
         let namaBarang = object.nama
         let deskripsiBarang = object.deskripsi
         let hargaBarang = object.harga
+        let id = object.id
 
         barangHTML = `<!-- card template -->
         <div class="col">
@@ -75,7 +84,7 @@ function tampilkanBarang() {
             <div class="card-body">
               <h5 class="card-title">${namaBarang}</h5>
               <p class="card-text">${deskripsiBarang}</p>
-              <a href="#" class="btn btn-primary">Rp. ${hargaBarang}</a>
+              <a href="#" class="btn btn-primary stretched-link" onclick="tambahkanKeKeranjang('${id}')">Rp. ${hargaBarang}</a>
             </div>
           </div>
         </div>
