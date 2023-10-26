@@ -45,7 +45,7 @@ function klik(){
         gambar:displayImage.src
     }
     arrayAngkut.push(objekAngkut)
-    document.getElementById('cardContainer').innerHTML=''
+    document.getElementById('AngkutBrangkasCards').innerHTML=''
     for (let i = 0; i < arrayAngkut.length; i++) {
         const satu = arrayAngkut[i];
         console.log(satu.gambar);
@@ -54,18 +54,20 @@ function klik(){
         }
         
             let stringHtml=`
-        
-            <div class="card container mb-3  "  style="width: 18rem; display:inline-block; margin-left:20px">
-                <img class="card-img-top" style="width: 200px; margin-left:30px" src="${satu.gambar}"  alt="Card image cap">
+                <div class="col-md-4 mb-3">
+                <div class="card">
+                <img src="${satu.gambar}" class="card-img-top" alt="..." height="196px">
                 <div class="card-body">
                 <h5 class="card-title">${satu.nama}</h5>
                 <p class="card-text">${satu.deskripsi}</p>
-                <button class="btn btn-primary"> Change</button>
-                 </div>
-          </div>
-          `
+                <p class="card-text fw-bold">Free</p>
+                <button class="btn btn-primary">Terima donasi</button>
+                </div>
+                </div>
+                </div>
+                `
 
-          document.getElementById('cardContainer').innerHTML+=stringHtml
+          document.getElementById('AngkutBrangkasCards').innerHTML+=stringHtml
         
        
        

@@ -50,15 +50,15 @@
             </div>
             <div class="container">
                 <div class="row justify-content-center">
-                <div class="col-md-4 bg-success bg-secondary text-center pt-3">
+                <div class="col-md-4 bg-success bg-secondary text-center pt-3 fw-bold">
                     <h3>#AngkutBrankas</h3>
                     <p>#AngkutBrangkas memfasilitasi untuk melakukan donasi secara cuma-cuma terhadap barang layak pakai yang sudah tidak terpakai, agar dapat dipergunakan oleh orang yang lebih membutuhkan</p>
                 </div>
-                <div class="col-md-4 bg-success-subtle text-center pt-3">
+                <div class="col-md-4 bg-success-subtle text-center pt-3 fw-bold">
                     <h3>#PakaiSampaiHabis</h3>
                     <p>#PakaiSampaiHabis melibatkan konsumen, brand dan recycler untuk bekerjasama mencapai sikap keberlanjutan, mengurangi laju impulsifitas & menghambat sampah jatuh ke TPA.</p>
                 </div>
-                <div class="col-md-4 bg-secondary text-center pt-3">
+                <div class="col-md-4 bg-secondary text-center pt-3 fw-bold">
                     <h3>#SalingSilang</h3>
                     <p>Dengan semakin mudahnya pertukaran informasi, melakukan sewa barang menjadi lebih mudah untuk dilakukan. Selain dengan mudahnya akses terhadap informasi, muncul kebutuhan dan kesadaran untuk memilih opsi sewa dibandingkan dengan beli. Terkadang luput dari pemikiran kita, beberapa jenis barang bisa kita pertimbangkan untuk sewa daripada beli.</p>
                 </div>
@@ -71,60 +71,32 @@
     <!-- Untuk AngkutBrangkas -->
     <section id="AngkutBrangkas">
         <div class="container">
-            <div class="row">
-              <div class="col">
-                <img src="pakai.gif"  style="width: 100px;" alt="">
-                <!-- col1 -->
-              </div>
-              <!-- col tengah -->
-              <div class="col">
-                <h1>#AngkutBrangkas</h1>            
-                <div class="card" style="width: 18rem;padding-bottom: 20px;">
-                    
-                    <div class="form-group">
-                        <label for="barang" style="margin-left: 20px; margin-top: 20px;" >Nama Barang</label>
-                        <input  class="form-control" id="barang" placeholder="barang"style="width: 15em; margin:auto"  >
-                        <!-- <input type="text" id="barang"> -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-md text-center">
+                    <h2>#AngkutBrangkas</h2>
+                    <div class="card mb-3 justify-content-center">
+                        <div class="form-group">
+                            <label for="barang" style="margin-left: 20px; margin-top: 20px;">Nama Barang</label>
+                            <input class="form-control" id="barang" placeholder="barang"style="width: 15em; margin:auto">
+                        </div>
+                        <div class="form-group">
+                            <label for="pilih" style="margin-left: 20px; margin-top: 10px;">Deskripsi</label>
+                            <textarea class="form-control" id="sewa" rows="3" style="width: 15em; margin:auto"></textarea>
+                        </div>
+                        <div class="form-group mb-3" style="margin-top: 10px;">
+                            <input type="file" id="photo" onchange="showImage()">
+                        </div>
+                        <button class="btn btn-primary m-auto mb-3" style="margin-top: 20px; width: 15em; margin-left: 20px;" onclick="klik()">Submit</button>
                     </div>
-                    <div class="form-group">
-                        <label for="pilih" style="margin-left: 20px; margin-top: 10px;" >Deskripsi</label>
-                        <textarea class="form-control" id="sewa" rows="3" style="width: 15em; margin:auto"></textarea>
-                      
-                    </div>
-                    
-                    <div class="form-group" style="margin-top: 10px;">
-                        <label for="photo" style="margin-left: 20px; ">File input</label>
-                        <input type="file" id="photo" style="margin-left: 20px;" onchange="showImage()" >
-                    </div>
-                   
-                    <button  class="btn btn-primary" style="margin-top: 20px; width: 15em; margin-left: 20px;"  onclick="klik()">Submit</button>
-                   
-                    
-                  
                 </div>
-              
-              </div>
-              <div class="col">
-                <!-- col3 -->
-              </div>
-              <div id="tampildiv" >
-                        
-                <p id="tampil"></p>
-               
-                <p id="tampil2"> </p>
-                <p id="tampil3"> </p>
-                <img  style="width: 300px; display: none;"src="" alt="" id="displayImage">
-                
-                <p id="btn"></p>
-        
+                <div class="row text-center">
+                </div>
+                <img style="width: 300px; display: none;"src="" alt="" id="displayImage">
+                <div class="row justify-content-center" id="AngkutBrangkasCards">
+                </div>
             </div>
-            <div id="cardContainer" >
-                 </div>
-            
-            </div>
-          </div>
-
-    </section>
+        </div>
+        </section>
     <!-- akhir angkutbrangkas -->
 
     <!-- Untuk PakaiSampaiHabis -->
