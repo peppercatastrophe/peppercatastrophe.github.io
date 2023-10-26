@@ -55,7 +55,7 @@ function klik(){
         
             let stringHtml=`
         
-            <div class="card container mb-3  "  style="width: 18rem; display:inline-block">
+            <div class="card container mb-3  "  style="width: 18rem; display:inline-block; margin-left:20px">
                 <img class="card-img-top" style="width: 200px; margin-left:30px" src="${satu.gambar}"  alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${satu.nama}</h5>
@@ -73,11 +73,30 @@ function klik(){
 
          
 }
+function showImage() {
+    let fileInput = document.querySelector("#photo");
+    let displayImage = document.getElementById("displayImage");
 
-function showProduct(){
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        let file = fileInput.files[0];
+        let reader = new FileReader();
 
+        // When the file is loaded, set the source of the image
+        reader.onload = function(e) {
+            displayImage.src = e.target.result;
+        };
 
+        // Read the selected file as a data URL
+        reader.readAsDataURL(file);
+    } else {
+        // Clear the image source if no file is selected
+        displayImage.src = "";
+    }
 }
+
+
+
 
 
 
