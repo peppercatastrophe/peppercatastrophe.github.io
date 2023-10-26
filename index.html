@@ -19,7 +19,7 @@
             <li class="nav-item">
                 <a class="nav-link active text-light fw-bolder" aria-current="page" onclick="showAngkutBrangkas()" href="#">#AngkutBrangkas</a>
             </li>
-            <li class="nav-item" onclick="showPakaiSampaihabis()">
+            <li class="nav-item" onclick="showPakaiSampaihabis(); tampilkanBarang()">
                 <a class="nav-link text-light fw-bolder" href="#">#PakaiSampaiHabis</a>
             </li>
             <li class="nav-item" onclick="showSalingSilang()">
@@ -128,7 +128,10 @@
 
     <!-- Untuk PakaiSampaiHabis -->
     <section id="PakaiSampaihabis">
-        
+        <div id="grid-card">
+            <div class="row row-cols-1 row-cols-md-5 g-4 p-5" id="grid-card-container">
+            </div>
+        </div>
     </section>
     <!-- akhir PakaiSampaiHabis -->
 
