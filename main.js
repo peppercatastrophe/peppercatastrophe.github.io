@@ -10,10 +10,14 @@ const htmlAngkutBrangkas = elementAngkutBrangkas.innerHTML
 const elementPakaiSampaiHabis = document.querySelector('#PakaiSampaihabis')
 const htmlPakaiSampaihabis = elementPakaiSampaiHabis.innerHTML
 
+const elementKeranjang = document.querySelector('#section-keranjang')
+const htmlKeranjang = elementKeranjang.innerHTML
+
 console.log('baris 6')
 elementSalingSilang.innerHTML = ''
 elementAngkutBrangkas.innerHTML=''
 elementPakaiSampaiHabis.innerHTML = ''
+elementKeranjang.innerHTML = ''
 
 
 function emptyContent() {
@@ -21,6 +25,7 @@ function emptyContent() {
     elementSalingSilang.innerHTML = ''
     elementAngkutBrangkas.innerHTML=''
     elementPakaiSampaiHabis.innerHTML = ''
+    elementKeranjang.innerHTML = ''
 }
 
 function showAngkutBrangkas() {
@@ -41,4 +46,9 @@ function showDMinimalism() {
 function showPakaiSampaihabis() {
     emptyContent()
     elementPakaiSampaiHabis.innerHTML = htmlPakaiSampaihabis
+}
+
+function showKeranjang() {
+    emptyContent()
+    elementKeranjang.innerHTML = htmlKeranjang
 }
