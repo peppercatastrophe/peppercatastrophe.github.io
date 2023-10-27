@@ -35,6 +35,9 @@ function refreshKeranjang() {
 
 function hapusBarangDariKeranjang(id) {
   delete objectKeranjang[id]
+  if (Object.keys(objectKeranjang).length === 0) {
+    document.querySelector('#logo-keranjang').classList.remove('text-warning')
+  }
   refreshKeranjang()
 }
 
@@ -47,8 +50,31 @@ function kurangKuantitasBarang(id) {
   objectKeranjang[id].kuantitas--
   if (objectKeranjang[id].kuantitas === 0) {
     hapusBarangDariKeranjang(id)
+
+    if (Object.keys(objectKeranjang).length === 0) {
+      document.querySelector('#logo-keranjang').classList.remove('text-warning')
+    }
   }
   refreshKeranjang()
+}
+
+function tombolCheckout() {
+  // TODO: tombol checkout
+  for (const key in objectKeranjang) {
+    if (Object.hasOwnProperty.call(objectKeranjang, key)) {
+      delete objectKeranjang[key];
+    }
+  }
+
+  refreshKeranjang()
+  document.querySelector('#tabel-keranjang').innerHTML += `<tbody class="align-middle">
+  <tr>
+    <h3 class="text-center mt-3">Terima kasih sudah berbelanja</h3>
+  </tr>
+  </tbody>`
+
+  document.querySelector('#logo-keranjang').classList.remove('text-warning')
+
 }
 
 function tampilkanKeranjang() {
@@ -57,6 +83,8 @@ function tampilkanKeranjang() {
     return
   }
   let totalHarga = 0
+
+  // loop barang2 di dalam keranjang
   for (let i = 0; i < arrayKey.length; i++) {
     const key = arrayKey[i];
     const barang = objectKeranjang[key]
@@ -84,8 +112,7 @@ function tampilkanKeranjang() {
     document.querySelector('#tabel-keranjang').innerHTML += htmlBarangDiKeranjang
   }
 
-
-
+  // total Harga
   const htmlRowTotalHarga = `<tbody class="align-middle">
   <tr>
     <th scope="row"></th>
@@ -98,6 +125,7 @@ function tampilkanKeranjang() {
   </tbody>`
   document.querySelector('#tabel-keranjang').innerHTML += htmlRowTotalHarga
 
+  // tombol Checkout di row terakhir
   const htmlLastRow = `<tbody class="align-middle">
   <tr>
     <th scope="row"></th>
@@ -105,7 +133,7 @@ function tampilkanKeranjang() {
     <td></td>
     <td></td>
     <td></td>
-    <td><a class="btn btn-primary" onclick="">Checkout</a></td>
+    <td><a class="btn btn-primary" onclick="tombolCheckout()">Checkout</a></td>
   </tr>
   </tbody>`
   document.querySelector('#tabel-keranjang').innerHTML += htmlLastRow
