@@ -52,3 +52,8 @@ function showKeranjang() {
     emptyContent()
     elementKeranjang.innerHTML = htmlKeranjang
 }
+
+function adaBarangDiKeranjang() {
+    // text-warning
+    document.querySelector('#logo-keranjang').classList.add('text-warning')
+}

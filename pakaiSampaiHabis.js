@@ -84,7 +84,7 @@ function tampilkanBarang() {
             <div class="card-body">
               <h5 class="card-title">${namaBarang}</h5>
               <p class="card-text">${deskripsiBarang}</p>
-              <a href="#" class="btn btn-primary stretched-link" onclick="tambahkanKeKeranjang('${id}')">Rp. ${hargaBarang}</a>
+              <a href="#" class="btn btn-primary stretched-link" onclick="tambahkanKeKeranjang('${id}'); adaBarangDiKeranjang()">Rp. ${hargaBarang}</a>
             </div>
           </div>
         </div>
