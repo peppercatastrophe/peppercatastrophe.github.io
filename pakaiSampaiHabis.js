@@ -78,9 +78,9 @@ function tampilkanBarang() {
         let id = object.id
 
         barangHTML = `<!-- card template -->
-        <div class="col">
+        <div class="col-md-4 mb-3">
           <div class="card" id="barang-${i}">
-            <img src="${gambarBarang}" class="card-img-top" alt="...">
+            <img src="${gambarBarang}" class="card-img-top" alt="..." height="196px">
             <div class="card-body">
               <h5 class="card-title">${namaBarang}</h5>
               <p class="card-text">${deskripsiBarang}</p>
