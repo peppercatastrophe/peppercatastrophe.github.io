@@ -40,6 +40,7 @@ function tampilkanBarangSalingSilang() {
             continue
         }
 
+        let idBarang = object.id
         let gambarBarang = object.gambar
         let namaBarang = object.nama
         let deskripsiBarang = object.deskripsi
@@ -53,7 +54,7 @@ function tampilkanBarangSalingSilang() {
             <h5 class="card-title">${namaBarang}</h5>
             <p class="card-text">${deskripsiBarang}</p>
             <p class="card-text fw-bold">Rp. ${hargaBarang}</p>
-            <a href="#" class="btn btn-primary">Sewa sekarang</a>
+            <a href="#" class="btn btn-primary stretched-link" onclick="tambahkanSalingSilangKeKeranjang('${idBarang}')">Sewa sekarang</a>
             </div>
         </div>
         </div>
@@ -61,4 +62,21 @@ function tampilkanBarangSalingSilang() {
 
         document.querySelector('#SalingSilangCards').innerHTML += barangHTML
     }
+}
+
+function tambahkanSalingSilangKeKeranjang(id) {
+    if (!objectKeranjang[id]) {
+        
+        for (let i = 0; i < arraySalingSilang.length; i++) {
+            const objectBarang = arraySalingSilang[i];
+            if (objectBarang.id === id) {
+                objectKeranjang[id] = objectBarang
+            }
+        }
+        objectKeranjang[id].kuantitas = 0
+    }
+
+    objectKeranjang[id].kuantitas++
+    console.log(objectKeranjang)
+    document.querySelector('#logo-keranjang').classList.add('text-warning')
 }
